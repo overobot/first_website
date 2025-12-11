@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nepal Voter ID Registration</title>
+    <style>
+        body {
+            font-family: system-ui, Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #003da5;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-section {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e1e1e6;
+        }
+        
+        .form-section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .required::after {
+            content: " *";
+            color: red;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #003da5;
+            box-shadow: 0 0 4px rgba(0, 61, 165, 0.2);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .form-row.full {
+            grid-template-columns: 1fr;
+        }
+        
+        button {
+            background: #003da5;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            background: #002d7a;
+        }
+        
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Nepal Voter ID Registration Form</h1>
+
+        <form id="voterForm">
+            <!-- Personal Information -->
+            <div class="form-section">
+                <div class="section-title">Personal Information</div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName" class="required">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="required">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fatherName" class="required">Father's Name</label>
+                        <input type="text" id="fatherName" name="fatherName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="motherName" class="required">Mother's Name</label>
+                        <input type="text" id="motherName" name="motherName" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dob" class="required">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="required">Gender</label>
+                        <select id="gender" name="gender" required>
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citizenship Information -->
+            <div class="form-section">
+                <div class="section-title">Citizenship Information</div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="citizenship" class="required">Citizenship Number</label>
+                        <input type="text" id="citizenship" name="citizenship" placeholder="e.g., 12-34-56-12345" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="citizenshipIssue" class="required">Issued District</label>
+                        <input type="text" id="citizenshipIssue" name="citizenshipIssue" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address Information -->
+            <div class="form-section">
+                <div class="section-title">Address Information</div>
+
+                <div class="form-row">
+                    <div class="form-group"></div>
+                    <label for="provinceSelect" class="required">Province</label>
+                    <select id="provinceSelect" name="province" required>
+                      <option value="">Select Province</option>
+                      <option value="Koshi">Koshi (Province 1)</option>
+                      <option value="Madhesh">Madhesh (Province 2)</option>
+                      <option value="Bagmati">Bagmati (Province 3)</option>
+                      <option value="Gandaki">Gandaki (Province 4)</option>
+                      <option value="Lumbini">Lumbini (Province 5)</option>
+                      <option value="Karnali">Karnali (Province 6)</option>
+                      <option value="Sudurpaschim">Sudurpaschim (Province 7)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="districtSelect" class="required">District</label>
+                    <select id="districtSelect" name="districtSelect" required>
+                      <option value="">Select District</option>
+
+                      <optgroup label="Koshi">
+                        <option>Bhojpur</option>
+                        <option>Dhankuta</option>
+                        <option>Ilam</option>
+                        <option>Jhapa</option>
+                        <option>Khotang</option>
+                        <option>Morang</option>
+                        <option>Okhaldhunga</option>
+                        <option>Panchthar</option>
+                        <option>Sankhuwasabha</option>
+                        <option>Solukhumbu</option>
+                        <option>Sunsari</option>
+                        <option>Taplejung</option>
+                        <option>Terhathum</option>
+                        <option>Udayapur</option>
+                      </optgroup>
+
+                      <optgroup label="Madhesh">
+                        <option>Bara</option>
+                        <option>Dhanusha</option>
+                        <option>Mahottari</option>
+                        <option>Parsa</option>
+                        <option>Rautahat</option>
+                        <option>Saptari</option>
+                        <option>Sarlahi</option>
+                        <option>Siraha</option>
+                      </optgroup>
+
+                      <optgroup label="Bagmati">
+                        <option>Bhaktapur</option>
+                        <option>Chitwan</option>
+                        <option>Dhading</option>
+                        <option>Dolakha</option>
+                        <option>Kathmandu</option>
+                        <option>Kavrepalanchok</option>
+                        <option>Lalitpur</option>
+                        <option>Makwanpur</option>
+                        <option>Nuwakot</option>
+                        <option>Ramechhap</option>
+                        <option>Rasuwa</option>
+                        <option>Sindhuli</option>
+                        <option>Sindhupalchok</option>
+                      </optgroup>
+
+                      <optgroup label="Gandaki">
+                        <option>Baglung</option>
+                        <option>Gorkha</option>
+                        <option>Kaski</option>
+                        <option>Lamjung</option>
+                        <option>Manang</option>
+                        <option>Mustang</option>
+                        <option>Myagdi</option>
+                        <option>Nawalpur</option>
+                        <option>Parbat</option>
+                        <option>Syangja</option>
+                        <option>Tanahun</option>
+                      </optgroup>
+
+                      <optgroup label="Lumbini">
+                        <option>Arghakhanchi</option>
+                        <option>Banke</option>
+                        <option>Bardiya</option>
+                        <option>Dang</option>
+                        <option>Gulmi</option>
+                        <option>Kapilvastu</option>
+                        <option>Nawalparasi (Parasi)</option>
+                        <option>Palpa</option>
+                        <option>Pyuthan</option>
+                        <option>Rolpa</option>
+                        <option>Rupandehi</option>
+                        <option>Rukum East</option>
+                      </optgroup>
+
+                      <optgroup label="Karnali">
+                        <option>Dailekh</option>
+                        <option>Dolpa</option>
+                        <option>Humla</option>
+                        <option>Jajarkot</option>
+                        <option>Jumla</option>
+                        <option>Kalikot</option>
+                        <option>Mugu</option>
+                        <option>Salyan</option>
+                        <option>Surkhet</option>
+                        <option>Rukum West</option>
+                      </optgroup>
+
+                      <optgroup label="Sudurpaschim">
+                        <option>Achham</option>
+                        <option>Baitadi</option>
+                        <option>Bajhang</option>
+                        <option>Bajura</option>
+                        <option>Dadeldhura</option>
+                        <option>Darchula</option>
+                        <option>Doti</option>
+                        <option>Kailali</option>
+                        <option>Kanchanpur</option>
+                      </optgroup>
+
+                    </select>
+                </div>
+            </div>
+    </div>
+
+    <script>
+        (function() {
+            const districtsByProvince = {
+                "Koshi": ["Bhojpur", "Dhankuta", "Ilam", "Jhapa", "Khotang", "Morang", "Okhaldhunga", "Panchthar", "Sankhuwasabha", "Solukhumbu", "Sunsari", "Taplejung", "Terhathum", "Udayapur"],
+                "Madhesh": ["Bara", "Dhanusha", "Mahottari", "Parsa", "Rautahat", "Saptari", "Sarlahi", "Siraha"],
+                "Bagmati": ["Bhaktapur", "Chitwan", "Dhading", "Dolakha", "Kathmandu", "Kavrepalanchok", "Lalitpur", "Makwanpur", "Nuwakot", "Ramechhap", "Rasuwa", "Sindhuli", "Sindhupalchok"],
+                "Gandaki": ["Baglung", "Gorkha", "Kaski", "Lamjung", "Manang", "Mustang", "Myagdi", "Nawalpur", "Parbat", "Syangja", "Tanahun"],
+                "Lumbini": ["Arghakhanchi", "Banke", "Bardiya", "Dang", "Gulmi", "Kapilvastu", "Nawalparasi (Parasi)", "Palpa", "Pyuthan", "Rolpa", "Rupandehi", "Rukum East"],
+                "Karnali": ["Dailekh", "Dolpa", "Humla", "Jajarkot", "Jumla", "Kalikot", "Mugu", "Salyan", "Surkhet", "Rukum West"],
+                "Sudurpaschim": ["Achham", "Baitadi", "Bajhang", "Bajura", "Dadeldhura", "Darchula", "Doti", "Kailali", "Kanchanpur"]
+            };
+
+            const province = document.getElementById('provinceSelect');
+            const district = document.getElementById('districtSelect');
+
+            function populateDistricts(prov) {
+                // clear current options
+                district.innerHTML = '<option value="">Select District</option>';
+                if (!prov || !districtsByProvince[prov]) {
+                    district.disabled = true;
+                    return;
+                }
+                districtsByProvince[prov].forEach(d => {
+                    const opt = document.createElement('option');
+                    opt.value = d;
+                    opt.textContent = d;
+                    district.appendChild(opt);
+                });
+                district.disabled = false;
+            }
+
+            province.addEventListener('change', function() {
+                populateDistricts(this.value);
+                // try to open the district dropdown for the user
+                district.focus();
+                try {
+                    district.click();
+                } catch (e) { /* some browsers disallow programmatic opening */ }
+            });
+
+            // small popup to confirm the chosen province/district when district selected
+            district.addEventListener('change', function() {
+                if (this.value) {
+                    alert('Selected Province: ' + (province.value || '-') + '\nSelected District: ' + this.value);
+                }
+            });
+
+            // Optional: when user clicks province, show the province name in a small popup before selection
+            province.addEventListener('click', function() {
+                // show currently selected province (if any)
+                if (this.value) {
+                    // non-blocking hint using console; alert on click can be annoying so kept minimal
+                    console.log('Province (current):', this.value);
+                }
+            });
+        })();
+    </script>
+    </div>
+    <div class="form-group">
+        <label for="district" class="required">District</label>
+        <input type="text" id="district" name="district" required>
+    </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="municipality" class="required">Municipality/Rural Municipality</label>
+            <input type="text" id="municipality" name="municipality" required>
+        </div>
+        <div class="form-group">
+            <label for="ward" class="required">Ward Number</label>
+            <input type="text" id="ward" name="ward" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="address" class="required">Street Address</label>
+        <textarea id="address" name="address" required></textarea>
+    </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="form-section">
+        <div class="section-title">Contact Information</div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="phone" class="required">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+977" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email">
+            </div>
+        </div>
+    </div>
+
+    <!-- Document Declaration -->
+    <div class="form-section">
+        <div class="section-title">Document Verification</div>
+
+        <div class="form-group">
+            <label>
+            <input type="checkbox" id="declareTrue" name="declareTrue" required>
+            I hereby declare that the information provided is true and correct.
+          </label>
+        </div>
+    </div>
+
+    <!-- Button Group -->
+    <div class="button-group">
+        <button type="submit">Submit Registration</button>
+        <button type="reset">Clear Form</button>
+    </div>
+    </form>
+    </div>
+
+    <script>
+        document.getElementById("voterForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Voter registration form submitted successfully!");
+            // Here you would typically send data to a server
+        });
+    </script>
+</body>
+
+</html>
